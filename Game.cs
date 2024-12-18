@@ -50,7 +50,7 @@ namespace rock_papaer_scissors
             }
             else
             {
-                Console.WriteLine("Replay");
+                Console.WriteLine("Its a Draw, please Replay");
                 player1.SetUserInput();
                 PlayGame(player1, player2);
             }
