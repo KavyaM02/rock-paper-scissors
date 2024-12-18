@@ -14,36 +14,36 @@ namespace rock_papaer_scissors
         public void PlayGame(UserPlayer player1, ComputerPlayer player2)
         {
 
-            userInput = player1.GetUserInput();
+            userInput = player1.GetUserInput().ToLower();
             computerInput = player2.GetComputerInput();
 
             if (userInput != computerInput)
             {
-                if (userInput == "Scissors" && computerInput == "Paper")
+                if (userInput == "scissors" && computerInput == "paper")
                 {
                     Console.WriteLine("User wins");
                 }
 
-                else if (userInput == "Scissors" && computerInput == "Rock")
+                else if (userInput == "scissors" && computerInput == "rock")
                 {
                     Console.WriteLine("Computer wins");
                 }
 
-                else if (userInput == "Paper" && computerInput == "Scissors")
+                else if (userInput == "paper" && computerInput == "scissors")
                 {
                     Console.WriteLine("Computer wins");
                 }
 
-                else if (userInput == "Paper" && computerInput == "Rock")
+                else if (userInput == "paper" && computerInput == "rock")
                 {
                     Console.WriteLine("User wins");
                 }
 
-                else if (userInput == "Rock" && computerInput == "Scissors")
+                else if (userInput == "rock" && computerInput == "scissors")
                 {
                     Console.WriteLine("User wins");
                 }
-                else if (userInput == "Rock" && computerInput == "Paper")
+                else if (userInput == "rock" && computerInput == "paper")
                 {
                     Console.WriteLine("Computer wins");
                 }

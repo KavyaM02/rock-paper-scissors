@@ -20,8 +20,9 @@ namespace rock_papaer_scissors
             Random randomComputerInput = new Random();
 
             int index = randomComputerInput.Next(inputs.Count);
-            Console.WriteLine("Computer Input:" + inputs[index]);
-            return inputs[index];
+            string input = inputs[index];
+            Console.WriteLine("Computer Input:" + input.ToLower());
+            return input.ToLower();
          }
 
     }
