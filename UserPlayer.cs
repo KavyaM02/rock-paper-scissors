@@ -14,19 +14,10 @@ namespace rock_papaer_scissors
         
         private string UserInput { get; set; }
 
-        public UserPlayer()
-        {
-            SetUserInput();
-        }
-
-        public void SetUserInput()
+        public string SetUserInput()
         {
             Console.WriteLine("Hi User, Please put your input");
             UserInput = Console.ReadLine();
-        }
-
-        public string GetUserInput()
-        {
             return UserInput;
         }
 

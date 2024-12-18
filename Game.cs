@@ -11,49 +11,75 @@ namespace rock_papaer_scissors
     {
         private string userInput;
         private string computerInput;
+        private int flag1 = 0;
+        private int flag2 = 0;
         public void PlayGame(UserPlayer player1, ComputerPlayer player2)
         {
 
-            userInput = player1.GetUserInput().ToLower();
-            computerInput = player2.GetComputerInput();
 
-            if (userInput != computerInput)
+            for (int i = 0; i < 3; i++)
             {
-                if (userInput == "scissors" && computerInput == "paper")
+                userInput = player1.SetUserInput().ToLower();
+                computerInput = player2.GetComputerInput();
+
+                if (userInput != computerInput)
                 {
-                    Console.WriteLine("User wins");
+                    if (userInput == "scissors" && computerInput == "paper")
+                    {
+                        Console.WriteLine("User wins");
+                        flag1++;
+                    }
+
+                    else if (userInput == "scissors" && computerInput == "rock")
+                    {
+                        Console.WriteLine("Computer wins");
+                        flag2++;
+                    }
+
+                    else if (userInput == "paper" && computerInput == "scissors")
+                    {
+                        Console.WriteLine("Computer wins");
+                        flag2++;
+                    }
+
+                    else if (userInput == "paper" && computerInput == "rock")
+                    {
+                        Console.WriteLine("User wins");
+                        flag1++;
+                    }
+
+                    else if (userInput == "rock" && computerInput == "scissors")
+                    {
+                        Console.WriteLine("User wins");
+                        flag1++;
+                    }
+                    else if (userInput == "rock" && computerInput == "paper")
+                    {
+                        Console.WriteLine("Computer wins");
+                        flag2++;
+                    }
                 }
 
-                else if (userInput == "scissors" && computerInput == "rock")
+                else
                 {
-                    Console.WriteLine("Computer wins");
-                }
-
-                else if (userInput == "paper" && computerInput == "scissors")
-                {
-                    Console.WriteLine("Computer wins");
-                }
-
-                else if (userInput == "paper" && computerInput == "rock")
-                {
-                    Console.WriteLine("User wins");
-                }
-
-                else if (userInput == "rock" && computerInput == "scissors")
-                {
-                    Console.WriteLine("User wins");
-                }
-                else if (userInput == "rock" && computerInput == "paper")
-                {
-                    Console.WriteLine("Computer wins");
+                    Console.WriteLine("Its a Draw, please Replay");
+                    --i;
                 }
             }
+            if(flag1 > 2 || flag2 < 2)
+            {
+                Console.WriteLine("Final Result: User wins");
+                Console.WriteLine("UserScore: " + flag1);
+                Console.WriteLine("ComputerScore: " + flag2);
+            }                            
             else
             {
-                Console.WriteLine("Its a Draw, please Replay");
-                player1.SetUserInput();
-                PlayGame(player1, player2);
+                Console.WriteLine("Final Result: Computer wins");
+                Console.WriteLine("ComputerScore: " + flag2);
+                Console.WriteLine("UserScore: " + flag1);
             }
+                
+
         }
     }
 }
