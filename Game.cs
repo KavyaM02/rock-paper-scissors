@@ -58,6 +58,12 @@ namespace rock_papaer_scissors
                         Console.WriteLine("Computer wins");
                         flag2++;
                     }
+                    else
+                    {
+                        Console.WriteLine("Please input correct value or check spelling");
+                        --i;
+                    }
+                        
                 }
 
                 else
