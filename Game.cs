@@ -9,8 +9,8 @@ namespace rock_papaer_scissors
 {
     internal class Game
     {
-        public static string userInput;
-        public static string computerInput;
+        private string userInput;
+        private string computerInput;
         public void PlayGame(UserPlayer player1, ComputerPlayer player2)
         {
 
