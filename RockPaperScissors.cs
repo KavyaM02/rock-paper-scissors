@@ -13,8 +13,6 @@ namespace rock_papaer_scissors
             UserPlayer userplayer = new UserPlayer();
             ComputerPlayer computerplayer = new ComputerPlayer();
             Game game = new Game();
-
-            userplayer.SetUserInput();
             
             game.PlayGame(userplayer, computerplayer);
 

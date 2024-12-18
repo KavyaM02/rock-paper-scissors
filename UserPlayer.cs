@@ -12,17 +12,22 @@ namespace rock_papaer_scissors
     internal class UserPlayer
     {
         
-        private string userInput;
+        private string UserInput { get; set; }
+
+        public UserPlayer()
+        {
+            SetUserInput();
+        }
 
         public void SetUserInput()
         {
             Console.WriteLine("Hi User, Please put your input");
-            userInput = Console.ReadLine();
+            UserInput = Console.ReadLine();
         }
 
         public string GetUserInput()
         {
-            return userInput;
+            return UserInput;
         }
 
     }
